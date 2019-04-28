@@ -43,7 +43,7 @@ namespace MyFirstCore.Controllers
         public async Task<IActionResult>Login(UserForLoginDto userForLoginDto)
         {
             var USerfromRepo =await _repo.Login(userForLoginDto.Username, userForLoginDto.Password);
-            if (userForLoginDto == null)
+            if (USerfromRepo == null)
                 return Unauthorized();
 
             var Claims = new[] 
